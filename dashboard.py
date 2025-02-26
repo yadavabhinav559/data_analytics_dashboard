@@ -13,15 +13,15 @@ import os
 DB_URL = os.getenv("postgresql://business_db_lq9x_user:FFGbf6k7rkYFaq9Kqh5uR8CnkJAFa8hb@dpg-cuvjura3esus73brlkj0-a/business_db_lq9x")  # Use Render environment variable
 
 
+print("🔍 DATABASE_URL:", DB_URL)  
+
 def fetch_data():
+    if not DB_URL:
+        raise ValueError("❌ DATABASE_URL is not set. Check your Render environment variables.")
+    
     engine = create_engine(DB_URL)
     query = "SELECT * FROM kpi_data ORDER BY date ASC"
-    df = pd.read_sql(query, engine)
-
-    print("✅ Data Loaded from PostgreSQL")
-    print(df.head())  # Print first few rows for debugging
-    print("Columns in DataFrame:", df.columns.tolist())  # Debugging line
-    return df
+    return pd.read_sql(query, engine)
 
 
 df = fetch_data()
