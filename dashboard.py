@@ -9,7 +9,8 @@ from sqlalchemy import create_engine
 import pandas as pd
 
 # Database connection
-DB_URL = "postgresql://postgres:0@localhost/business_db"
+import os
+DB_URL = os.getenv("postgresql://business_db_lq9x_user:FFGbf6k7rkYFaq9Kqh5uR8CnkJAFa8hb@dpg-cuvjura3esus73brlkj0-a/business_db_lq9x")  # Use Render environment variable
 
 
 def fetch_data():
