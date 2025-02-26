@@ -10,7 +10,7 @@ import pandas as pd
 
 # Database connection
 import os
-DB_URL = os.getenv("postgresql://business_db_lq9x_user:FFGbf6k7rkYFaq9Kqh5uR8CnkJAFa8hb@dpg-cuvjura3esus73brlkj0-a/business_db_lq9x")  # Use Render environment variable
+DB_URL = "postgresql://business_db_lq9x_user:FFGbf6k7rkYFaq9Kqh5uR8CnkJAFa8hb@dpg-cuvjura3esus73brlkj0-a/business_db_lq9x"
 
 
 print("🔍 DATABASE_URL:", DB_URL)  
